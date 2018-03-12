@@ -1,2 +1,2 @@
 # FYCategorys
-iOS 常用category。
+总结iOS开发过程中常用的category。
