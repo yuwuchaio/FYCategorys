@@ -11,7 +11,7 @@
 @interface NSData (FYCategory)
 #pragma mark - data compress & decompress
 // 网络中常用压缩及解压方式
-//GZIP  le format speci cation: http://www.ietf.org/rfc/ rfc1952.txt
+//GZIP  file format speci cation: http://www.ietf.org/rfc/rfc1952.txt
 /**
  从gzip压缩后的data解压出raw的data
  @return 解压后的data.

@@ -1,2 +1,6 @@
 
 FYCategorys.xcodeproj/project.xcworkspace/xcuserdata/gaolailong.xcuserdatad/UserInterfaceState.xcuserstate
+
+*.xcbkptlist
+
+*.xcuserstate
