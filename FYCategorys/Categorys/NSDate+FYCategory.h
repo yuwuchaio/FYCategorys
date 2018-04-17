@@ -123,7 +123,7 @@
 /**
  将时间戳转换成NSDate对象
  
- @param timestamp 时间戳，double类型（13 or 10位）
+ @param timestamp 时间戳，double类型
  @return 格式化后的NSDate对象
  */
 + (NSDate *)fy_dateWithTimeStamp:(NSTimeInterval)timestamp;

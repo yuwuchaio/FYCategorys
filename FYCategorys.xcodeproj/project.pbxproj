@@ -14,6 +14,7 @@
 		D40376ED205277E9005E9E98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D40376EB205277E9005E9E98 /* LaunchScreen.storyboard */; };
 		D40376F0205277E9005E9E98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D40376EF205277E9005E9E98 /* main.m */; };
 		D403770D20527843005E9E98 /* NSDate+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D403770C20527843005E9E98 /* NSDate+FYCategory.m */; };
+		D425F521207C69AE005E56D0 /* UIImage+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D425F520207C69AE005E56D0 /* UIImage+FYCategory.m */; };
 		D4B08BCA2057D6B900D14ACC /* NSString+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B08BC92057D6B900D14ACC /* NSString+FYCategory.m */; };
 		D4B9B7C6206B3A3C00C8568A /* UINavigationController+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B9B7C5206B3A3C00C8568A /* UINavigationController+FYCategory.m */; };
 		D4B9B7CB206B7A0300C8568A /* NSData+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B9B7CA206B7A0300C8568A /* NSData+FYCategory.m */; };
@@ -32,6 +33,8 @@
 		D40376EF205277E9005E9E98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D403770B20527843005E9E98 /* NSDate+FYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+FYCategory.h"; sourceTree = "<group>"; };
 		D403770C20527843005E9E98 /* NSDate+FYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+FYCategory.m"; sourceTree = "<group>"; };
+		D425F51F207C69AE005E56D0 /* UIImage+FYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+FYCategory.h"; sourceTree = "<group>"; };
+		D425F520207C69AE005E56D0 /* UIImage+FYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FYCategory.m"; sourceTree = "<group>"; };
 		D4B08BC82057D6B900D14ACC /* NSString+FYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FYCategory.h"; sourceTree = "<group>"; };
 		D4B08BC92057D6B900D14ACC /* NSString+FYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FYCategory.m"; sourceTree = "<group>"; };
 		D4B9B7C4206B3A3C00C8568A /* UINavigationController+FYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FYCategory.h"; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 				D4B9B7C5206B3A3C00C8568A /* UINavigationController+FYCategory.m */,
 				D4B9B7C9206B7A0300C8568A /* NSData+FYCategory.h */,
 				D4B9B7CA206B7A0300C8568A /* NSData+FYCategory.m */,
+				D425F51F207C69AE005E56D0 /* UIImage+FYCategory.h */,
+				D425F520207C69AE005E56D0 /* UIImage+FYCategory.m */,
 			);
 			path = Categorys;
 			sourceTree = "<group>";
@@ -125,7 +130,7 @@
 		D40376D5205277E9005E9E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = FishYu;
 				TargetAttributes = {
 					D40376DC205277E9005E9E98 = {
@@ -170,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D425F521207C69AE005E56D0 /* UIImage+FYCategory.m in Sources */,
 				D4B9B7CB206B7A0300C8568A /* NSData+FYCategory.m in Sources */,
 				D40376E5205277E9005E9E98 /* ViewController.m in Sources */,
 				D403770D20527843005E9E98 /* NSDate+FYCategory.m in Sources */,
@@ -216,6 +222,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -223,6 +230,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -271,6 +279,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -278,6 +287,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -315,7 +325,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FishYu.FYCategorys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -328,7 +338,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FishYu.FYCategorys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

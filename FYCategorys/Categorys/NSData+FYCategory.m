@@ -7,10 +7,288 @@
 //
 
 #import "NSData+FYCategory.h"
+#include <CommonCrypto/CommonCrypto.h>
 #include <zlib.h>
 
 @implementation NSData (FYCategory)
 
+#pragma mark - data hash
+
+- (NSString *)fy_md5String {
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(self.bytes, (CC_LONG)self.length, result);
+    return [NSString stringWithFormat:
+            @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+            result[0], result[1], result[2], result[3],
+            result[4], result[5], result[6], result[7],
+            result[8], result[9], result[10], result[11],
+            result[12], result[13], result[14], result[15]
+            ];
+}
+
+- (NSData *)fy_md5Data {
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(self.bytes, (CC_LONG)self.length, result);
+    return [NSData dataWithBytes:result length:CC_MD5_DIGEST_LENGTH];
+}
+
+- (NSString *)fy_sha256String {
+    unsigned char result[CC_SHA256_DIGEST_LENGTH];
+    CC_SHA256(self.bytes, (CC_LONG)self.length, result);
+    NSMutableString *hash = [NSMutableString
+                             stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
+    for (int i = 0; i < CC_SHA256_DIGEST_LENGTH; i++) {
+        [hash appendFormat:@"%02x", result[i]];
+    }
+    return hash;
+}
+
+- (NSData *)fy_sha256Data {
+    unsigned char result[CC_SHA256_DIGEST_LENGTH];
+    CC_SHA256(self.bytes, (CC_LONG)self.length, result);
+    return [NSData dataWithBytes:result length:CC_SHA256_DIGEST_LENGTH];
+}
+
+- (NSString *)fy_sha384String {
+    unsigned char result[CC_SHA384_DIGEST_LENGTH];
+    CC_SHA384(self.bytes, (CC_LONG)self.length, result);
+    NSMutableString *hash = [NSMutableString
+                             stringWithCapacity:CC_SHA384_DIGEST_LENGTH * 2];
+    for (int i = 0; i < CC_SHA384_DIGEST_LENGTH; i++) {
+        [hash appendFormat:@"%02x", result[i]];
+    }
+    return hash;
+}
+
+- (NSData *)fy_sha384Data {
+    unsigned char result[CC_SHA384_DIGEST_LENGTH];
+    CC_SHA384(self.bytes, (CC_LONG)self.length, result);
+    return [NSData dataWithBytes:result length:CC_SHA384_DIGEST_LENGTH];
+}
+
+- (NSString *)fy_sha512String {
+    unsigned char result[CC_SHA512_DIGEST_LENGTH];
+    CC_SHA512(self.bytes, (CC_LONG)self.length, result);
+    NSMutableString *hash = [NSMutableString
+                             stringWithCapacity:CC_SHA512_DIGEST_LENGTH * 2];
+    for (int i = 0; i < CC_SHA512_DIGEST_LENGTH; i++) {
+        [hash appendFormat:@"%02x", result[i]];
+    }
+    return hash;
+}
+
+- (NSData *)fy_sha512Data {
+    unsigned char result[CC_SHA512_DIGEST_LENGTH];
+    CC_SHA512(self.bytes, (CC_LONG)self.length, result);
+    return [NSData dataWithBytes:result length:CC_SHA512_DIGEST_LENGTH];
+}
+- (NSString *)fy_hmacStringUsingAlg:(CCHmacAlgorithm)alg withKey:(NSString *)key {
+    size_t size;
+    switch (alg) {
+        case kCCHmacAlgMD5: size = CC_MD5_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA1: size = CC_SHA1_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA224: size = CC_SHA224_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA256: size = CC_SHA256_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA384: size = CC_SHA384_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA512: size = CC_SHA512_DIGEST_LENGTH; break;
+        default: return nil;
+    }
+    unsigned char result[size];
+    const char *cKey = [key cStringUsingEncoding:NSUTF8StringEncoding];
+    CCHmac(alg, cKey, strlen(cKey), self.bytes, self.length, result);
+    NSMutableString *hash = [NSMutableString stringWithCapacity:size * 2];
+    for (int i = 0; i < size; i++) {
+        [hash appendFormat:@"%02x", result[i]];
+    }
+    return hash;
+}
+
+- (NSData *)fy_hmacDataUsingAlg:(CCHmacAlgorithm)alg withKey:(NSData *)key {
+    size_t size;
+    switch (alg) {
+        case kCCHmacAlgMD5: size = CC_MD5_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA1: size = CC_SHA1_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA224: size = CC_SHA224_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA256: size = CC_SHA256_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA384: size = CC_SHA384_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA512: size = CC_SHA512_DIGEST_LENGTH; break;
+        default: return nil;
+    }
+    unsigned char result[size];
+    CCHmac(alg, [key bytes], key.length, self.bytes, self.length, result);
+    return [NSData dataWithBytes:result length:size];
+}
+
+- (NSString *)fy_hmacMD5StringWithKey:(NSString *)key {
+    return [self fy_hmacStringUsingAlg:kCCHmacAlgMD5 withKey:key];
+}
+
+- (NSData *)fy_hmacMD5DataWithKey:(NSData *)key {
+    return [self fy_hmacDataUsingAlg:kCCHmacAlgMD5 withKey:key];
+}
+
+- (NSString *)fy_hmacSHA256StringWithKey:(NSString *)key {
+    return [self fy_hmacStringUsingAlg:kCCHmacAlgSHA256 withKey:key];
+}
+
+- (NSData *)fy_hmacSHA256DataWithKey:(NSData *)key {
+    return [self fy_hmacDataUsingAlg:kCCHmacAlgSHA256 withKey:key];
+}
+
+- (NSString *)fy_hmacSHA384StringWithKey:(NSString *)key {
+    return [self fy_hmacStringUsingAlg:kCCHmacAlgSHA384 withKey:key];
+}
+
+- (NSData *)fy_hmacSHA384DataWithKey:(NSData *)key {
+    return [self fy_hmacDataUsingAlg:kCCHmacAlgSHA384 withKey:key];
+}
+
+- (NSString *)fy_hmacSHA512StringWithKey:(NSString *)key {
+    return [self fy_hmacStringUsingAlg:kCCHmacAlgSHA512 withKey:key];
+}
+
+- (NSData *)fy_hmacSHA512DataWithKey:(NSData *)key {
+    return [self fy_hmacDataUsingAlg:kCCHmacAlgSHA512 withKey:key];
+}
+
+- (NSString *)fy_crc32String {
+    uLong result = crc32(0, self.bytes, (uInt)self.length);
+    return [NSString stringWithFormat:@"%08x", (uint32_t)result];
+}
+
+- (uint32_t)fy_crc32 {
+    uLong result = crc32(0, self.bytes, (uInt)self.length);
+    return (uint32_t)result;
+}
+
+#pragma mark - Encrypt and Decrypt
+- (NSData *)fy_aes256EncryptWithKey:(NSData *)key iv:(NSData *)iv {
+    if (key.length != 16 && key.length != 24 && key.length != 32) {
+        return nil;
+    }
+    if (iv.length != 16 && iv.length != 0) {
+        return nil;
+    }
+    
+    NSData *result = nil;
+    size_t bufferSize = self.length + kCCBlockSizeAES128;
+    void *buffer = malloc(bufferSize);
+    if (!buffer) return nil;
+    size_t encryptedSize = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt,
+                                          kCCAlgorithmAES128,
+                                          kCCOptionPKCS7Padding,
+                                          key.bytes,
+                                          key.length,
+                                          iv.bytes,
+                                          self.bytes,
+                                          self.length,
+                                          buffer,
+                                          bufferSize,
+                                          &encryptedSize);
+    if (cryptStatus == kCCSuccess) {
+        result = [[NSData alloc]initWithBytes:buffer length:encryptedSize];
+        free(buffer);
+        return result;
+    } else {
+        free(buffer);
+        return nil;
+    }
+}
+
+- (NSData *)fy_aes256DecryptWithkey:(NSData *)key iv:(NSData *)iv {
+    if (key.length != 16 && key.length != 24 && key.length != 32) {
+        return nil;
+    }
+    if (iv.length != 16 && iv.length != 0) {
+        return nil;
+    }
+    
+    NSData *result = nil;
+    size_t bufferSize = self.length + kCCBlockSizeAES128;
+    void *buffer = malloc(bufferSize);
+    if (!buffer) return nil;
+    size_t encryptedSize = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt,
+                                          kCCAlgorithmAES128,
+                                          kCCOptionPKCS7Padding,
+                                          key.bytes,
+                                          key.length,
+                                          iv.bytes,
+                                          self.bytes,
+                                          self.length,
+                                          buffer,
+                                          bufferSize,
+                                          &encryptedSize);
+    if (cryptStatus == kCCSuccess) {
+        result = [[NSData alloc]initWithBytes:buffer length:encryptedSize];
+        free(buffer);
+        return result;
+    } else {
+        free(buffer);
+        return nil;
+    }
+}
+
+#pragma mark - encode
+- (NSString *)fy_utf8String {
+    if (self.length > 0) {
+        return [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
+    }
+    return @"";
+}
+
+- (NSString *)fy_hexString {
+    NSUInteger length = self.length;
+    NSMutableString *result = [NSMutableString stringWithCapacity:length * 2];
+    const unsigned char *byte = self.bytes;
+    for (int i = 0; i < length; i++, byte++) {
+        [result appendFormat:@"%02X", *byte];
+    }
+    return result;
+}
+
+static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+- (NSString *)fy_base64EncodedString {
+    NSUInteger length = self.length;
+    if (length == 0)
+        return @"";
+    
+    NSUInteger out_length = ((length + 2) / 3) * 4;
+    uint8_t *output = malloc(((out_length + 2) / 3) * 4);
+    if (output == NULL)
+        return nil;
+    
+    const char *input = self.bytes;
+    NSInteger i, value;
+    for (i = 0; i < length; i += 3) {
+        value = 0;
+        for (NSInteger j = i; j < i + 3; j++) {
+            value <<= 8;
+            if (j < length) {
+                value |= (0xFF & input[j]);
+            }
+        }
+        NSInteger index = (i / 3) * 4;
+        output[index + 0] = base64EncodingTable[(value >> 18) & 0x3F];
+        output[index + 1] = base64EncodingTable[(value >> 12) & 0x3F];
+        output[index + 2] = ((i + 1) < length)
+        ? base64EncodingTable[(value >> 6) & 0x3F]
+        : '=';
+        output[index + 3] = ((i + 2) < length)
+        ? base64EncodingTable[(value >> 0) & 0x3F]
+        : '=';
+    }
+    
+    NSString *base64 = [[NSString alloc] initWithBytes:output
+                                                length:out_length
+                                              encoding:NSASCIIStringEncoding];
+    free(output);
+    return base64;
+}
+
+#pragma mark - data compress & decompress
 - (NSData *)fy_gzipDecompress {
     if ([self length] == 0) return self;
     
