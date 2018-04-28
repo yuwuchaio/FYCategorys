@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 @interface NSData (FYCategory)
 
 #pragma mark - data hash
@@ -176,4 +177,6 @@
  @return 压缩后的data.
  */
 - (nullable NSData *)fy_zlibCompressed;
+
 @end
+NS_ASSUME_NONNULL_END

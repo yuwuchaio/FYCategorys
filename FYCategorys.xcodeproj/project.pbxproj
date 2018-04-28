@@ -114,8 +114,8 @@
 				D44A512C20941A4700408B4F /* NSData+FYCategory.m */,
 				D44A512A20941A4700408B4F /* NSDate+FYCategory.h */,
 				D44A512D20941A4700408B4F /* NSDate+FYCategory.m */,
-				D44A512B20941A4700408B4F /* NSString+FYCategory.m */,
 				D44A512E20941A4700408B4F /* NSString+FYCategory.h */,
+				D44A512B20941A4700408B4F /* NSString+FYCategory.m */,
 			);
 			path = Foundation_Category;
 			sourceTree = "<group>";
@@ -336,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FYCategorys/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -349,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FYCategorys/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

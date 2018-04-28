@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 /**
   support minimum iOS 8.0
  */
@@ -59,49 +60,50 @@
  @param years 年
  @return 修改后的date
  */
-- (NSDate *)fy_dateByAddingYears:(NSInteger)years;
+
+- (nullable NSDate *)fy_dateByAddingYears:(NSInteger)years;
 /**
  修改date的月
  
  @param months 月
  @return 修改后的date
  */
-- (NSDate *)fy_dateByAddingMonths:(NSInteger)months;
+- (nullable NSDate *)fy_dateByAddingMonths:(NSInteger)months;
 /**
  修改date的周
  
  @param weeks 周
  @return 修改后的date
  */
-- (NSDate *)fy_dateByAddingWeeks:(NSInteger)weeks;
+- (nullable NSDate *)fy_dateByAddingWeeks:(NSInteger)weeks;
 /**
  修改date的天
  
  @param days 天
  @return 修改后的date
  */
-- (NSDate *)fy_dateByAddingDays:(NSInteger)days;
+- (nullable NSDate *)fy_dateByAddingDays:(NSInteger)days;
 /**
  修改date的小时
  
  @param hours 小时
  @return 修改后的date
  */
-- (NSDate *)fy_dateByAddingHours:(NSInteger)hours;
+- (nullable NSDate *)fy_dateByAddingHours:(NSInteger)hours;
 /**
  修改date的小时
  
  @param minutes 分钟
  @return 修改后的date
  */
-- (NSDate *)fy_dateByAddingMinutes:(NSInteger)minutes;
+- (nullable NSDate *)fy_dateByAddingMinutes:(NSInteger)minutes;
 /**
  修改date的小时
  
  @param seconds 秒
  @return 修改后的date
  */
-- (NSDate *)fy_dateByAddingSeconds:(NSInteger)seconds;
+- (nullable NSDate *)fy_dateByAddingSeconds:(NSInteger)seconds;
 #pragma mark - NSDate ——> NSString
 /**
  将NSDate 按照dateformat的格式转换成字符串，如'yyyy-MM-dd HH:mm'
@@ -109,16 +111,16 @@
  @param dateformat 格式字符
  @return 转换后的时间字符串
  */
-- (NSString *)fy_stringWithDateFormat:(NSString *)dateformat;
+- (nullable NSString *)fy_stringWithDateFormat:(NSString *)dateformat;
 #pragma mark - NSString ——> NSDate
 /**
- 将时间字符串转换成NSDate对象，dateString与format格式需要相同返回nil
+ 将时间字符串转换成NSDate对象，dateString与format格式需要相同否则返回nil
  
  @param dateString 时间字符串如 '2018/3/9 13:47:16'
  @param format 对应的时间格式 'yyyy/MM/dd HH:mm:ss'
  @return 格式化后的NSDate对象
  */
-+ (NSDate *)fy_dateWithString:(NSString *)dateString dateformat:(NSString *)format;
++ (nullable NSDate *)fy_dateWithString:(NSString *)dateString dateformat:(NSString *)format;
 #pragma mark - NSTimeInterval ——> NSDate
 /**
  将时间戳转换成NSDate对象
@@ -126,13 +128,15 @@
  @param timestamp 时间戳，double类型
  @return 格式化后的NSDate对象
  */
-+ (NSDate *)fy_dateWithTimeStamp:(NSTimeInterval)timestamp;
++ (nullable NSDate *)fy_dateWithTimeStamp:(NSTimeInterval)timestamp;
 #pragma mark - function methods
 /**
  返回NSDate对象的零点NSdate对象
  
  @return date零点对象
  */
-- (NSDate *)fy_startDateOfDay;
+- (nullable NSDate *)fy_startDateOfDay;
 
 @end
+
+NS_ASSUME_NONNULL_END
