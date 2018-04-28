@@ -1,2 +1,2 @@
 # FYCategorys
-总结iOS开发过程中常用的category。
+总结iOS开发过程中常用的category。主要参考[YYCategories](https://github.com/ibireme/YYCategories)，由于YY大神更加倾向于调用系统自带 API 一样的体验，方法没有添加前缀。但在开发的过程中，会遇到不同库的方法重复。所以在这个FYCategorys我添加了自身的前缀和平时开发使用到Category进行补充。算是开发中的积累并能为以后工作中提供一个完整的工具库。此FYCategorys可能更适合我自身的项目开发，对其他开发者有一定的参考作用。
