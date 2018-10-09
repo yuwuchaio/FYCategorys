@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UINavigationController (FYCategory)
-#pragma mark - add completion
+
 - (void)fy_pushViewController:(UIViewController *)viewController
                      animated:(BOOL)animated
                    completion:(void(^)(void))completion;

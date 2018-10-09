@@ -15,6 +15,7 @@
 		D40376F0205277E9005E9E98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D40376EF205277E9005E9E98 /* main.m */; };
 		D406FAB921606CB700D171E5 /* UIView+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D406FAB821606CB700D171E5 /* UIView+FYCategory.m */; };
 		D406FABC21607A3D00D171E5 /* UIApplication+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D406FABB21607A3D00D171E5 /* UIApplication+FYCategory.m */; };
+		D4089580216C47D800FFE180 /* NSTimer+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D408957F216C47D800FFE180 /* NSTimer+FYCategory.m */; };
 		D44A513020941A4700408B4F /* UIImage+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D44A512620941A4700408B4F /* UIImage+FYCategory.m */; };
 		D44A513120941A4700408B4F /* UINavigationController+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D44A512820941A4700408B4F /* UINavigationController+FYCategory.m */; };
 		D44A513220941A4700408B4F /* NSString+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D44A512B20941A4700408B4F /* NSString+FYCategory.m */; };
@@ -37,6 +38,8 @@
 		D406FAB821606CB700D171E5 /* UIView+FYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FYCategory.m"; sourceTree = "<group>"; };
 		D406FABA21607A3D00D171E5 /* UIApplication+FYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+FYCategory.h"; sourceTree = "<group>"; };
 		D406FABB21607A3D00D171E5 /* UIApplication+FYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+FYCategory.m"; sourceTree = "<group>"; };
+		D408957E216C47D800FFE180 /* NSTimer+FYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+FYCategory.h"; sourceTree = "<group>"; };
+		D408957F216C47D800FFE180 /* NSTimer+FYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+FYCategory.m"; sourceTree = "<group>"; };
 		D44A512520941A4700408B4F /* UINavigationController+FYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FYCategory.h"; sourceTree = "<group>"; };
 		D44A512620941A4700408B4F /* UIImage+FYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FYCategory.m"; sourceTree = "<group>"; };
 		D44A512720941A4700408B4F /* UIImage+FYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FYCategory.h"; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				D44A512D20941A4700408B4F /* NSDate+FYCategory.m */,
 				D44A512E20941A4700408B4F /* NSString+FYCategory.h */,
 				D44A512B20941A4700408B4F /* NSString+FYCategory.m */,
+				D408957E216C47D800FFE180 /* NSTimer+FYCategory.h */,
+				D408957F216C47D800FFE180 /* NSTimer+FYCategory.m */,
 			);
 			path = Foundation_Category;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				D406FAB921606CB700D171E5 /* UIView+FYCategory.m in Sources */,
 				D40376E2205277E9005E9E98 /* AppDelegate.m in Sources */,
 				D44A513420941A4700408B4F /* NSDate+FYCategory.m in Sources */,
+				D4089580216C47D800FFE180 /* NSTimer+FYCategory.m in Sources */,
 				D44A513220941A4700408B4F /* NSString+FYCategory.m in Sources */,
 				D44A513120941A4700408B4F /* UINavigationController+FYCategory.m in Sources */,
 				D406FABC21607A3D00D171E5 /* UIApplication+FYCategory.m in Sources */,
