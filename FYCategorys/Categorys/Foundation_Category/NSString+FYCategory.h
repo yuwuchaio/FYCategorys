@@ -10,6 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface NSString (FYCategory)
+#pragma mark - Utilities
+/**
+ 返回一个UUID
+ */
++ (NSString *)stringWithUUID;
+
+/**
+ 去除前后空格、换行
+ */
+- (NSString *)stringByTrim;
+
+#pragma mark - Hash
 /**
  使用MD5 hash算法生成的小写字符串
  */

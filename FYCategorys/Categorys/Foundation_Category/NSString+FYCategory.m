@@ -11,6 +11,18 @@
 
 @implementation NSString (FYCategory)
 
++ (NSString *)stringWithUUID {
+    CFUUIDRef uuid = CFUUIDCreate(NULL);
+    CFStringRef string = CFUUIDCreateString(NULL, uuid);
+    CFRelease(uuid);
+    return (__bridge_transfer NSString *)string;
+}
+
+- (NSString *)stringByTrim {
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    return [self stringByTrimmingCharactersInSet:set];
+}
+
 - (nullable NSString *)fy_md5String {
     return [[self dataUsingEncoding:NSUTF8StringEncoding] fy_md5String];
 }
