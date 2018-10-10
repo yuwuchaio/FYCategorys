@@ -35,7 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D40376DD205277E9005E9E98 /* FYCategorys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYCategorys.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D40376DD205277E9005E9E98 /* FYKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40376E0205277E9005E9E98 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D40376E1205277E9005E9E98 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D40376E3205277E9005E9E98 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		D40376D4205277E9005E9E98 = {
 			isa = PBXGroup;
 			children = (
-				D40376DF205277E9005E9E98 /* FYCategorys */,
+				D40376DF205277E9005E9E98 /* FYlit */,
 				D40376DE205277E9005E9E98 /* Products */,
 				D408959A216DA19B00FFE180 /* Frameworks */,
 			);
@@ -108,12 +108,12 @@
 		D40376DE205277E9005E9E98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D40376DD205277E9005E9E98 /* FYCategorys.app */,
+				D40376DD205277E9005E9E98 /* FYKit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D40376DF205277E9005E9E98 /* FYCategorys */ = {
+		D40376DF205277E9005E9E98 /* FYlit */ = {
 			isa = PBXGroup;
 			children = (
 				D4089596216D9D8200FFE180 /* FYUtility */,
@@ -128,7 +128,7 @@
 				D40376EE205277E9005E9E98 /* Info.plist */,
 				D40376EF205277E9005E9E98 /* main.m */,
 			);
-			path = FYCategorys;
+			path = FYlit;
 			sourceTree = "<group>";
 		};
 		D403770A20527826005E9E98 /* Categorys */ = {
@@ -208,9 +208,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D40376DC205277E9005E9E98 /* FYCategorys */ = {
+		D40376DC205277E9005E9E98 /* FYKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D40376F3205277E9005E9E98 /* Build configuration list for PBXNativeTarget "FYCategorys" */;
+			buildConfigurationList = D40376F3205277E9005E9E98 /* Build configuration list for PBXNativeTarget "FYKit" */;
 			buildPhases = (
 				D40376D9205277E9005E9E98 /* Sources */,
 				D40376DA205277E9005E9E98 /* Frameworks */,
@@ -220,9 +220,9 @@
 			);
 			dependencies = (
 			);
-			name = FYCategorys;
+			name = FYKit;
 			productName = FYCategorys;
-			productReference = D40376DD205277E9005E9E98 /* FYCategorys.app */;
+			productReference = D40376DD205277E9005E9E98 /* FYKit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -240,7 +240,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D40376D8205277E9005E9E98 /* Build configuration list for PBXProject "FYCategorys" */;
+			buildConfigurationList = D40376D8205277E9005E9E98 /* Build configuration list for PBXProject "FYKit" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -253,7 +253,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D40376DC205277E9005E9E98 /* FYCategorys */,
+				D40376DC205277E9005E9E98 /* FYKit */,
 			);
 		};
 /* End PBXProject section */
@@ -465,7 +465,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D40376D8205277E9005E9E98 /* Build configuration list for PBXProject "FYCategorys" */ = {
+		D40376D8205277E9005E9E98 /* Build configuration list for PBXProject "FYKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D40376F1205277E9005E9E98 /* Debug */,
@@ -474,7 +474,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D40376F3205277E9005E9E98 /* Build configuration list for PBXNativeTarget "FYCategorys" */ = {
+		D40376F3205277E9005E9E98 /* Build configuration list for PBXNativeTarget "FYKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D40376F4205277E9005E9E98 /* Debug */,

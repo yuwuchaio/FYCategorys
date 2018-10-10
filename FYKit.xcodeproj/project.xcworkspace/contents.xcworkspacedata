@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:FYCategorys.xcodeproj">
+      location = "self:/Users/gaolailong/Documents/FYCategorys/FYKit.xcodeproj">
    </FileRef>
 </Workspace>
