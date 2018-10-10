@@ -441,7 +441,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RW2Z4PQ9KK;
-				INFOPLIST_FILE = FYCategorys/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FYlit/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FishYu.FYCategorys;
@@ -457,7 +457,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RW2Z4PQ9KK;
-				INFOPLIST_FILE = FYCategorys/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FYlit/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FishYu.FYCategorys;
