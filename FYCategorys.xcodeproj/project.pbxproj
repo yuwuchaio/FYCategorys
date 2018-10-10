@@ -25,6 +25,8 @@
 		D4089595216D925000FFE180 /* UIColor+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D4089594216D925000FFE180 /* UIColor+FYCategory.m */; };
 		D4089599216D9DA600FFE180 /* FYReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D4089598216D9DA500FFE180 /* FYReachability.m */; };
 		D408959C216DA19B00FFE180 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D408959B216DA19B00FFE180 /* SystemConfiguration.framework */; };
+		D40895A1216DA2E400FFE180 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D408959D216DA2E300FFE180 /* SAMKeychain.m */; };
+		D40895A2216DA2E400FFE180 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D408959E216DA2E400FFE180 /* SAMKeychainQuery.m */; };
 		D44A513020941A4700408B4F /* UIImage+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D44A512620941A4700408B4F /* UIImage+FYCategory.m */; };
 		D44A513120941A4700408B4F /* UINavigationController+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D44A512820941A4700408B4F /* UINavigationController+FYCategory.m */; };
 		D44A513220941A4700408B4F /* NSString+FYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D44A512B20941A4700408B4F /* NSString+FYCategory.m */; };
@@ -66,6 +68,10 @@
 		D4089597216D9DA500FFE180 /* FYReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYReachability.h; sourceTree = "<group>"; };
 		D4089598216D9DA500FFE180 /* FYReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYReachability.m; sourceTree = "<group>"; };
 		D408959B216DA19B00FFE180 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D408959D216DA2E300FFE180 /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
+		D408959E216DA2E400FFE180 /* SAMKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychainQuery.m; sourceTree = "<group>"; };
+		D408959F216DA2E400FFE180 /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
+		D40895A0216DA2E400FFE180 /* SAMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychain.h; sourceTree = "<group>"; };
 		D44A512520941A4700408B4F /* UINavigationController+FYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FYCategory.h"; sourceTree = "<group>"; };
 		D44A512620941A4700408B4F /* UIImage+FYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FYCategory.m"; sourceTree = "<group>"; };
 		D44A512720941A4700408B4F /* UIImage+FYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FYCategory.h"; sourceTree = "<group>"; };
@@ -137,6 +143,10 @@
 		D4089596216D9D8200FFE180 /* FYUtility */ = {
 			isa = PBXGroup;
 			children = (
+				D40895A0216DA2E400FFE180 /* SAMKeychain.h */,
+				D408959D216DA2E300FFE180 /* SAMKeychain.m */,
+				D408959F216DA2E400FFE180 /* SAMKeychainQuery.h */,
+				D408959E216DA2E400FFE180 /* SAMKeychainQuery.m */,
 				D4089597216D9DA500FFE180 /* FYReachability.h */,
 				D4089598216D9DA500FFE180 /* FYReachability.m */,
 			);
@@ -271,6 +281,7 @@
 				D4089589216C9F2E00FFE180 /* NSObject+FYCategory.m in Sources */,
 				D44A513020941A4700408B4F /* UIImage+FYCategory.m in Sources */,
 				D4089586216C4CF000FFE180 /* UIDevice+FYCategory.m in Sources */,
+				D40895A2216DA2E400FFE180 /* SAMKeychainQuery.m in Sources */,
 				D40376E5205277E9005E9E98 /* ViewController.m in Sources */,
 				D40376F0205277E9005E9E98 /* main.m in Sources */,
 				D408958F216CA50100FFE180 /* NSArray+FYCategory.m in Sources */,
@@ -283,6 +294,7 @@
 				D4089580216C47D800FFE180 /* NSTimer+FYCategory.m in Sources */,
 				D44A513220941A4700408B4F /* NSString+FYCategory.m in Sources */,
 				D44A513120941A4700408B4F /* UINavigationController+FYCategory.m in Sources */,
+				D40895A1216DA2E400FFE180 /* SAMKeychain.m in Sources */,
 				D4089592216CAA3B00FFE180 /* NSDictionary+FYCategory.m in Sources */,
 				D406FABC21607A3D00D171E5 /* UIApplication+FYCategory.m in Sources */,
 			);
