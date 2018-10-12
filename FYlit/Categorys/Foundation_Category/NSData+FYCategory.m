@@ -14,7 +14,7 @@
 
 #pragma mark - data hash
 
-- (NSString *)fy_md5String {
+- (NSString *)md5String {
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     CC_MD5(self.bytes, (CC_LONG)self.length, result);
     return [NSString stringWithFormat:
@@ -26,13 +26,13 @@
             ];
 }
 
-- (NSData *)fy_md5Data {
+- (NSData *)md5Data {
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     CC_MD5(self.bytes, (CC_LONG)self.length, result);
     return [NSData dataWithBytes:result length:CC_MD5_DIGEST_LENGTH];
 }
 
-- (NSString *)fy_sha256String {
+- (NSString *)sha256String {
     unsigned char result[CC_SHA256_DIGEST_LENGTH];
     CC_SHA256(self.bytes, (CC_LONG)self.length, result);
     NSMutableString *hash = [NSMutableString
@@ -43,13 +43,13 @@
     return hash;
 }
 
-- (NSData *)fy_sha256Data {
+- (NSData *)sha256Data {
     unsigned char result[CC_SHA256_DIGEST_LENGTH];
     CC_SHA256(self.bytes, (CC_LONG)self.length, result);
     return [NSData dataWithBytes:result length:CC_SHA256_DIGEST_LENGTH];
 }
 
-- (NSString *)fy_sha384String {
+- (NSString *)sha384String {
     unsigned char result[CC_SHA384_DIGEST_LENGTH];
     CC_SHA384(self.bytes, (CC_LONG)self.length, result);
     NSMutableString *hash = [NSMutableString
@@ -60,13 +60,13 @@
     return hash;
 }
 
-- (NSData *)fy_sha384Data {
+- (NSData *)sha384Data {
     unsigned char result[CC_SHA384_DIGEST_LENGTH];
     CC_SHA384(self.bytes, (CC_LONG)self.length, result);
     return [NSData dataWithBytes:result length:CC_SHA384_DIGEST_LENGTH];
 }
 
-- (NSString *)fy_sha512String {
+- (NSString *)sha512String {
     unsigned char result[CC_SHA512_DIGEST_LENGTH];
     CC_SHA512(self.bytes, (CC_LONG)self.length, result);
     NSMutableString *hash = [NSMutableString
@@ -77,12 +77,12 @@
     return hash;
 }
 
-- (NSData *)fy_sha512Data {
+- (NSData *)sha512Data {
     unsigned char result[CC_SHA512_DIGEST_LENGTH];
     CC_SHA512(self.bytes, (CC_LONG)self.length, result);
     return [NSData dataWithBytes:result length:CC_SHA512_DIGEST_LENGTH];
 }
-- (NSString *)fy_hmacStringUsingAlg:(CCHmacAlgorithm)alg withKey:(NSString *)key {
+- (NSString *)hmacStringUsingAlg:(CCHmacAlgorithm)alg withKey:(NSString *)key {
     size_t size;
     switch (alg) {
         case kCCHmacAlgMD5: size = CC_MD5_DIGEST_LENGTH; break;
@@ -103,7 +103,7 @@
     return hash;
 }
 
-- (NSData *)fy_hmacDataUsingAlg:(CCHmacAlgorithm)alg withKey:(NSData *)key {
+- (NSData *)hmacDataUsingAlg:(CCHmacAlgorithm)alg withKey:(NSData *)key {
     size_t size;
     switch (alg) {
         case kCCHmacAlgMD5: size = CC_MD5_DIGEST_LENGTH; break;
@@ -119,50 +119,50 @@
     return [NSData dataWithBytes:result length:size];
 }
 
-- (NSString *)fy_hmacMD5StringWithKey:(NSString *)key {
-    return [self fy_hmacStringUsingAlg:kCCHmacAlgMD5 withKey:key];
+- (NSString *)hmacMD5StringWithKey:(NSString *)key {
+    return [self hmacStringUsingAlg:kCCHmacAlgMD5 withKey:key];
 }
 
-- (NSData *)fy_hmacMD5DataWithKey:(NSData *)key {
-    return [self fy_hmacDataUsingAlg:kCCHmacAlgMD5 withKey:key];
+- (NSData *)hmacMD5DataWithKey:(NSData *)key {
+    return [self hmacDataUsingAlg:kCCHmacAlgMD5 withKey:key];
 }
 
-- (NSString *)fy_hmacSHA256StringWithKey:(NSString *)key {
-    return [self fy_hmacStringUsingAlg:kCCHmacAlgSHA256 withKey:key];
+- (NSString *)hmacSHA256StringWithKey:(NSString *)key {
+    return [self hmacStringUsingAlg:kCCHmacAlgSHA256 withKey:key];
 }
 
-- (NSData *)fy_hmacSHA256DataWithKey:(NSData *)key {
-    return [self fy_hmacDataUsingAlg:kCCHmacAlgSHA256 withKey:key];
+- (NSData *)hmacSHA256DataWithKey:(NSData *)key {
+    return [self hmacDataUsingAlg:kCCHmacAlgSHA256 withKey:key];
 }
 
-- (NSString *)fy_hmacSHA384StringWithKey:(NSString *)key {
-    return [self fy_hmacStringUsingAlg:kCCHmacAlgSHA384 withKey:key];
+- (NSString *)hmacSHA384StringWithKey:(NSString *)key {
+    return [self hmacStringUsingAlg:kCCHmacAlgSHA384 withKey:key];
 }
 
-- (NSData *)fy_hmacSHA384DataWithKey:(NSData *)key {
-    return [self fy_hmacDataUsingAlg:kCCHmacAlgSHA384 withKey:key];
+- (NSData *)hmacSHA384DataWithKey:(NSData *)key {
+    return [self hmacDataUsingAlg:kCCHmacAlgSHA384 withKey:key];
 }
 
-- (NSString *)fy_hmacSHA512StringWithKey:(NSString *)key {
-    return [self fy_hmacStringUsingAlg:kCCHmacAlgSHA512 withKey:key];
+- (NSString *)hmacSHA512StringWithKey:(NSString *)key {
+    return [self hmacStringUsingAlg:kCCHmacAlgSHA512 withKey:key];
 }
 
-- (NSData *)fy_hmacSHA512DataWithKey:(NSData *)key {
-    return [self fy_hmacDataUsingAlg:kCCHmacAlgSHA512 withKey:key];
+- (NSData *)hmacSHA512DataWithKey:(NSData *)key {
+    return [self hmacDataUsingAlg:kCCHmacAlgSHA512 withKey:key];
 }
 
-- (NSString *)fy_crc32String {
+- (NSString *)crc32String {
     uLong result = crc32(0, self.bytes, (uInt)self.length);
     return [NSString stringWithFormat:@"%08x", (uint32_t)result];
 }
 
-- (uint32_t)fy_crc32 {
+- (uint32_t)crc32 {
     uLong result = crc32(0, self.bytes, (uInt)self.length);
     return (uint32_t)result;
 }
 
 #pragma mark - Encrypt and Decrypt
-- (NSData *)fy_aes256EncryptWithKey:(NSData *)key iv:(NSData *)iv {
+- (NSData *)aes256EncryptWithKey:(NSData *)key iv:(NSData *)iv {
     if (key.length != 16 && key.length != 24 && key.length != 32) {
         return nil;
     }
@@ -196,7 +196,7 @@
     }
 }
 
-- (NSData *)fy_aes256DecryptWithkey:(NSData *)key iv:(NSData *)iv {
+- (NSData *)aes256DecryptWithkey:(NSData *)key iv:(NSData *)iv {
     if (key.length != 16 && key.length != 24 && key.length != 32) {
         return nil;
     }
@@ -231,14 +231,14 @@
 }
 
 #pragma mark - encode
-- (NSString *)fy_utf8String {
+- (NSString *)utf8String {
     if (self.length > 0) {
         return [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
     }
     return @"";
 }
 
-- (NSString *)fy_hexString {
+- (NSString *)hexString {
     NSUInteger length = self.length;
     NSMutableString *result = [NSMutableString stringWithCapacity:length * 2];
     const unsigned char *byte = self.bytes;
@@ -250,7 +250,7 @@
 
 static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
-- (NSString *)fy_base64EncodedString {
+- (NSString *)base64EncodedString {
     NSUInteger length = self.length;
     if (length == 0)
         return @"";
@@ -289,7 +289,7 @@ static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
 }
 
 #pragma mark - data compress & decompress
-- (NSData *)fy_gzipDecompress {
+- (NSData *)gzipDecompress {
     if ([self length] == 0) return self;
     
     unsigned full_length = (unsigned)[self length];
@@ -329,7 +329,7 @@ static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
     } else return nil;
 }
 
-- (NSData *)fy_gzipComperss {
+- (NSData *)gzipComperss {
     if ([self length] == 0) return self;
     
     z_stream strm;
@@ -371,7 +371,7 @@ static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
     return [NSData dataWithData:compressed];
 }
 
-- (NSData *)fy_zlibDecompress {
+- (NSData *)zlibDecompress {
     if ([self length] == 0) return self;
     
     NSUInteger full_length = [self length];
@@ -412,7 +412,7 @@ static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
     } else return nil;
 }
 
-- (NSData *)fy_zlibCompressed {
+- (NSData *)zlibCompressed {
     if ([self length] == 0) return self;
     
     z_stream strm;

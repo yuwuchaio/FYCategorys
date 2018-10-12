@@ -23,50 +23,50 @@
     return [self stringByTrimmingCharactersInSet:set];
 }
 
-- (nullable NSString *)fy_md5String {
-    return [[self dataUsingEncoding:NSUTF8StringEncoding] fy_md5String];
+- (nullable NSString *)md5String {
+    return [[self dataUsingEncoding:NSUTF8StringEncoding] md5String];
 }
 
-- (nullable NSString *)fy_sha256String {
-     return [[self dataUsingEncoding:NSUTF8StringEncoding] fy_sha256String
+- (nullable NSString *)sha256String {
+     return [[self dataUsingEncoding:NSUTF8StringEncoding] sha256String
              ];
 }
 
-- (nullable NSString *)fy_sha512String {
-    return [[self dataUsingEncoding:NSUTF8StringEncoding] fy_sha512String];
+- (nullable NSString *)sha512String {
+    return [[self dataUsingEncoding:NSUTF8StringEncoding] sha512String];
 }
 
-- (nullable NSString *)fy_hmacMD5StringWithKey:(NSString *)key {
+- (nullable NSString *)hmacMD5StringWithKey:(NSString *)key {
     return [[self dataUsingEncoding:NSUTF8StringEncoding]
-            fy_hmacMD5StringWithKey:key];
+            hmacMD5StringWithKey:key];
 }
 
-- (nullable NSString *)fy_hmacSHA256StringWithKey:(NSString *)key {
+- (nullable NSString *)hmacSHA256StringWithKey:(NSString *)key {
     return [[self dataUsingEncoding:NSUTF8StringEncoding]
-            fy_hmacSHA256StringWithKey:key];
+            hmacSHA256StringWithKey:key];
 }
 
-- (nullable NSString *)fy_hmacSHA384StringWithKey:(NSString *)key {
+- (nullable NSString *)hmacSHA384StringWithKey:(NSString *)key {
     return [[self dataUsingEncoding:NSUTF8StringEncoding]
-            fy_hmacSHA384StringWithKey:key];
+            hmacSHA384StringWithKey:key];
 }
 
-- (nullable NSString *)fy_hmacSHA512StringWithKey:(NSString *)key {
+- (nullable NSString *)hmacSHA512StringWithKey:(NSString *)key {
     return [[self dataUsingEncoding:NSUTF8StringEncoding]
-            fy_hmacSHA512StringWithKey:key];
+            hmacSHA512StringWithKey:key];
 }
 
-- (nullable NSString *)fy_crc32String {
-        return [[self dataUsingEncoding:NSUTF8StringEncoding] fy_crc32String];
+- (nullable NSString *)crc32String {
+        return [[self dataUsingEncoding:NSUTF8StringEncoding] crc32String];
 }
 
 #pragma mark - Encode and decode
 
-- (nullable NSString *)fy_base64EncodedString {
-      return [[self dataUsingEncoding:NSUTF8StringEncoding] fy_base64EncodedString];
+- (nullable NSString *)base64EncodedString {
+      return [[self dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString];
 }
 
-- (NSString *)fy_stringByURLEncode {
+- (NSString *)stringByURLEncode {
     if ([self respondsToSelector:@selector(stringByAddingPercentEncodingWithAllowedCharacters:)]) {
         /**
          AFNetworking/AFURLRequestSerialization.m
@@ -119,7 +119,7 @@
     }
 }
 
-- (NSString *)fy_stringByURLDecode {
+- (NSString *)stringByURLDecode {
     if ([self respondsToSelector:@selector(stringByRemovingPercentEncoding)]) {
         return [self stringByRemovingPercentEncoding];
     } else {
@@ -138,7 +138,7 @@
 #pragma clang diagnostic pop
     }
 }
-- (NSString *)fy_stringByEscapingHTML {
+- (NSString *)stringByEscapingHTML {
     NSUInteger len = self.length;
     if (!len) return self;
     
@@ -170,7 +170,7 @@
 
 #pragma mark - Drawing
 
-- (CGSize)fy_sizeForFont:(UIFont *)font size:(CGSize)size mode:(NSLineBreakMode)lineBreakMode {
+- (CGSize)sizeForFont:(UIFont *)font size:(CGSize)size mode:(NSLineBreakMode)lineBreakMode {
     CGSize result;
     if (!font) font = [UIFont systemFontOfSize:12];
     if ([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
@@ -194,13 +194,13 @@
     return result;
 }
 
-- (CGFloat)fy_widthForFont:(UIFont *)font {
-    CGSize size = [self fy_sizeForFont:font size:CGSizeMake(HUGE, HUGE) mode:NSLineBreakByWordWrapping];
+- (CGFloat)widthForFont:(UIFont *)font {
+    CGSize size = [self sizeForFont:font size:CGSizeMake(HUGE, HUGE) mode:NSLineBreakByWordWrapping];
     return size.width;
 }
 
-- (CGFloat)fy_heightForFont:(UIFont *)font width:(CGFloat)width {
-    CGSize size = [self fy_sizeForFont:font size:CGSizeMake(width, HUGE) mode:NSLineBreakByWordWrapping];
+- (CGFloat)heightForFont:(UIFont *)font width:(CGFloat)width {
+    CGSize size = [self sizeForFont:font size:CGSizeMake(width, HUGE) mode:NSLineBreakByWordWrapping];
     return size.height;
 }
 @end

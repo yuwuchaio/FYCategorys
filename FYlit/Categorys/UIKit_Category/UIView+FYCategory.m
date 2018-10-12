@@ -10,7 +10,7 @@
 
 @implementation UIView (FYCategory)
 
-- (UIImage *)fy_snapshotImage {
+- (UIImage *)snapshotImage {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, 0);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *snap = UIGraphicsGetImageFromCurrentImageContext();
@@ -47,7 +47,7 @@
     }
 }
 
-- (void)fy_removeAllSubviews {
+- (void)removeAllSubviews {
     while (self.subviews.count) {
         [self.subviews.lastObject removeFromSuperview];
     }

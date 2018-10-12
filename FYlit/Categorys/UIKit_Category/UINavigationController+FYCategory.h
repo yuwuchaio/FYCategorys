@@ -10,14 +10,14 @@
 
 @interface UINavigationController (FYCategory)
 
-- (void)fy_pushViewController:(UIViewController *)viewController
+- (void)pushViewController:(UIViewController *)viewController
                      animated:(BOOL)animated
                    completion:(void(^)(void))completion;
 
-- (void)fy_popViewControllerAnimated:(BOOL)animated
+- (void)popViewControllerAnimated:(BOOL)animated
                           completion:(void(^)(void))completion;
 
-- (void)fy_popToViewController:(UIViewController *)viewController
+- (void)popToViewController:(UIViewController *)viewController
                       animated:(BOOL)animated
                     completion:(void(^)(void))completion;
 @end

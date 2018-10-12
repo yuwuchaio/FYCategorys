@@ -16,13 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, readonly) UIViewController *viewController;
 
 /// 当前视图的截图
-- (nullable UIImage *)fy_snapshotImage;
+- (nullable UIImage *)snapshotImage;
 /// 设置视图阴影效果
 - (void)setLayerShadow:(nullable UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius;
 /// 根据sketch设置视图shadow
 - (void)applySketchShadowColor:(nullable UIColor*)color alpha:(CGFloat)alpha offset:(CGSize)offset blur:(CGFloat)blur spread:(CGFloat)spread;
 /// 移除所有子视图
-- (void)fy_removeAllSubviews;
+- (void)removeAllSubviews;
 
 #pragma mark - coordinate system
 /// 将 receiver 上的 一个 point 转换到 view 的坐标系上，view 为nil使用window的坐标系

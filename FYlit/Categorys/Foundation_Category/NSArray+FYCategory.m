@@ -30,7 +30,7 @@
 
 - (NSString *)plistString {
     NSData *xmlData = [NSPropertyListSerialization dataWithPropertyList:self format:NSPropertyListXMLFormat_v1_0 options:kNilOptions error:NULL];
-    if (xmlData) return xmlData.fy_utf8String;
+    if (xmlData) return xmlData.utf8String;
     return nil;
 }
 

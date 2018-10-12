@@ -10,7 +10,7 @@
 
 @implementation UINavigationController (FYCategory)
 
-- (void)fy_pushViewController:(UIViewController *)viewController
+- (void)pushViewController:(UIViewController *)viewController
                      animated:(BOOL)animated
                    completion:(void(^)(void))completion {
     [self pushViewController:viewController animated:animated];
@@ -26,7 +26,7 @@
     }
 }
 
-- (void)fy_popViewControllerAnimated:(BOOL)animated
+- (void)popViewControllerAnimated:(BOOL)animated
                           completion:(void(^)(void))completion {
     [self popViewControllerAnimated:animated];
     if (!completion) {
@@ -41,7 +41,7 @@
     }
 }
 
-- (void)fy_popToViewController:(UIViewController *)viewController
+- (void)popToViewController:(UIViewController *)viewController
                       animated:(BOOL)animated
                     completion:(void(^)(void))completion {
     [self popToViewController:viewController animated:animated];
